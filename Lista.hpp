@@ -10,6 +10,7 @@ class Lista
 {
 public:
 
+    //metodos para criação e modificação da Lista.
     Lista();
     bool ListaVazia();
     bool ListaCheia();

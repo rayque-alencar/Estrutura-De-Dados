@@ -8,6 +8,7 @@ Lista::Lista(){
 
 }
 
+//verificar se a lsita está vazia
 bool Lista::ListaVazia(){
 
     if(tamanhoAtual == 0)
@@ -16,6 +17,7 @@ bool Lista::ListaVazia(){
         return false;          
 }
 
+//verificar se a lista está cheia
 bool Lista::ListaCheia(){
 
     if (tamanhoAtual == tamanhoMax)
@@ -24,10 +26,12 @@ bool Lista::ListaCheia(){
         return false;
 }
 
+//retorma o tamanho atual da lista
 int Lista::TamanhoAtual(){
     return tamanhoAtual;
 }
 
+//retorna o dado/elemento que tem na posição desejada
 int Lista::Elemento(int posicao){
 
     int dado;
@@ -41,6 +45,7 @@ int Lista::Elemento(int posicao){
 
 }
 
+//retorna a posição do dado/elemento desejado
 int Lista::Posicao(int dado){
 
     for (int i = 0; i < tamanhoAtual; i++){
@@ -53,6 +58,7 @@ int Lista::Posicao(int dado){
     return -1;
 }
 
+//adiconar elemento passando a posição desejada junto com o dado/elemento
 bool Lista::AdicionarElemento(int posicao, int dado){
 
     if ((ListaVazia()) || (posicao > tamanhoAtual+1) || (posicao <=0)){
@@ -70,6 +76,7 @@ bool Lista::AdicionarElemento(int posicao, int dado){
 
 }
 
+//adicionar elemento no final da lista
 bool Lista::AdiconarDadoNoFinal(int x){
     if( ! ListaCheia() ) {
         dados[tamanhoAtual] = x;
@@ -79,7 +86,7 @@ bool Lista::AdiconarDadoNoFinal(int x){
         return false;
 }
 
-
+//remover elemento da lista, passando a posição dele
 int Lista::RemoverElemento(int posicao){
 
     int auxDadoRemover;
@@ -99,6 +106,7 @@ int Lista::RemoverElemento(int posicao){
     return auxDadoRemover;
 }
 
+//metodo para exibir a lista completa no tamanho atual dela
 void Lista::ExibirLista(){
 
     for (int i = 0; i < tamanhoAtual; i++)

@@ -3,12 +3,15 @@
 
 int main(){
 
+    //Criação da lista
     Lista lista;
     int auxLista;
     
+    //Setando o tamanho da lista de acordo com o usuario
     cout << "Qual o tamanho da Lista: " << endl;
     cin >> auxLista;
 
+    //for para coletar os valores a serem adicionados a lista
     for (int i = 0; i < auxLista; i++)
     {
         int valorLista;
@@ -17,7 +20,7 @@ int main(){
         lista.AdiconarDadoNoFinal(valorLista);
     }
     
-    
+    //while para fazer um menu de opção
     while (true){
 
     int opcao;
@@ -25,17 +28,19 @@ int main(){
 
     cout << "\n|--------------------------------------------|" << endl;
     cout << "| 1 - Adicionar elemento na posicao desejada |"   << endl;
-    cout << "| 2 - Tamanho da Lista                       |"   << endl;
-    cout << "| 3 - Remover elemento da lista              |"   << endl;
-    cout << "| 4 - Visualizar elemento com a posicao      |"   << endl;
-    cout << "| 5 - Qual a posicao do elemento             |"   << endl;
-    cout << "| 6 - Exibir lista                           |"   << endl;
+    cout << "| 2 - Adiciona elemento no final da lista    |"   << endl;
+    cout << "| 3 - Tamanho da Lista                       |"   << endl;
+    cout << "| 4 - Remover elemento da lista              |"   << endl;
+    cout << "| 5 - Visualizar elemento com a posicao      |"   << endl;
+    cout << "| 6 - Qual a posicao do elemento             |"   << endl;
+    cout << "| 7 - Exibir lista                           |"   << endl;
     cout << "|--------------------------------------------|\n" << endl;
     cout << "Digite a opcao desejada: " << endl;
     cin >> opcao;
     system("clear||cls");
 
         switch (opcao){
+        //adicionar na posição 
         case 1:
             cout << "Voce que adicionar o valor na posicao: " << endl;
             cin >> posicao;
@@ -51,30 +56,40 @@ int main(){
             }else{
                 cout << "Nao foi possivel adicionar o elemento" << endl;
             }
+            break;
+        //adicionar elemento no final da lista
+        case 2:
 
+            int valorLista;
+            cout << "Digite o valor: " << endl;
+            cin >> valorLista;
+            lista.AdiconarDadoNoFinal(valorLista);
             break;
 
-        case 2: 
+        //tamanho da lista atual
+        case 3: 
+
             cout << "O tamanho atual da lista eh: " << lista.TamanhoAtual() << endl;
             break;
 
-        case 3:
+        //remover elemento da lista 
+        case 4:
         
             cout << "Qual a posicao do elemento que voce que remover da lista: " << endl;
-            cin >> posicao;
-            
+            cin >> posicao; 
             cout << "Elemento removido foi: " << lista.RemoverElemento(posicao) << endl;
-
             break;
 
-        case 4:
+        //Visualizar elemento com a posição 
+        case 5:
             int posicaoElemento;
             cout << "Qual a posicao do elemento que voce quer visualizar: " << endl;
             cin >> posicaoElemento;
             cout << lista.Elemento(posicaoElemento) << endl;
             break;
 
-        case 5:
+        //pesquisar elemento com o posição
+        case 6:
             int aux;  
             cout << "Qual o elemento que deseja pesquisar: " << endl;
             cin >> aux;
@@ -82,7 +97,8 @@ int main(){
             cout << lista.Posicao(aux) << endl; 
             break;
 
-        case 6: 
+        //exibir todos os elementos da lista
+        case 7: 
             lista.ExibirLista();
             break;
     
